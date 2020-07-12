@@ -66,56 +66,25 @@ class DetailModal extends Component {
                 <div className="container-header">
                     <div className="row">
                         <div className="col-xs-12 col-sm-6  card_row">
-                            <div
-                                className={"card_badge " + ((this.props.patient.sex.toString() == 'Male') ? 'card_badge--male' : 'card_badge--female')}>
-                                {this.props.patient.sex}
-                            </div>
-                            <div className="card_age">{this.props.patient.age}</div>
+                            {/*<div*/}
+                                {/*className={"card_badge " + ((this.props.patient.sex.toString() == 'Male') ? 'card_badge--male' : 'card_badge--female')}>*/}
+                                {/*{this.props.patient.sex}*/}
+                            {/*</div>*/}
+                            {/*<div className="card_age">{this.props.patient.age}</div>*/}
                         </div>
                         <div className="col-xs-12 col-sm-6 hidden-xs-down">
                             <div className="container-alerticons pull-left">
-                                <Stroke patient={this.props.patient}/>
-                                <Trauma patient={this.props.patient}/>
-                                <Heart patient={this.props.patient}/>
-                                <ISO patient={this.props.patient}/>
-                                <EMTALA patient={this.props.patient}/>
+                                {/*<Stroke patient={this.props.patient}/>*/}
+                                {/*<Trauma patient={this.props.patient}/>*/}
+                                {/*<Heart patient={this.props.patient}/>*/}
+                                {/*<ISO patient={this.props.patient}/>*/}
+                                {/*<EMTALA patient={this.props.patient}/>*/}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-xs-12 col-sm-6">
-                        <div className="card_name-modal">{this.props.patient.name.fname}, {this.props.patient.name.lname}</div>
-                        <div className="container-diagnosis">
-                            <div className="card_diagnosis-modal">{this.props.patient.condition}</div>
-                            <div className="card_critical-modal">{this.props.patient.status}</div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 hidden-sm-up">
-                        <div className="container-alerticons pull-left">
-                            <Stroke patient={this.props.patient}/>
-                            <Trauma patient={this.props.patient}/>
-                            <Heart patient={this.props.patient}/>
-                            <ISO patient={this.props.patient}/>
-                            <EMTALA patient={this.props.patient}/>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6">
-                        <div className="row card_row">
-                            <div className="col-xs-12 col-sm-4 card_text-modal">
-                                <label>Date of Birth</label>
-                                {this.props.patient.dob}
-                            </div>
-                            <div className="col-xs-12 col-sm-4 card_text-modal">
-                                <label>Isolation</label>
-                                {this.props.patient.isolation}
-                            </div>
-                            <div className="col-xs-12 col-sm-4 card_text-modal">
-                                <label>Status</label>
-                                <div className="card_case-status-pill">{this.props.patient.casestatus}</div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div className="row">
                   <div className="col-xs-12">
@@ -125,41 +94,27 @@ class DetailModal extends Component {
                 <div className="row">
                   <div className="col-xs-12 col-sm-6 card_row card_text-modal">
                     <label>Sending Facility</label>
-                    <span className="glyph-facility"></span> {this.props.patient.sfacility}
-                  </div>
-                  <div className="col-xs-12 col-sm-6 card_row card_text-modal">
-                    <label>Receiving Facility</label>
-                    <span className="glyph-facility"></span> {this.props.patient.rfacility}
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-xs-12 col-sm-6 card_row card_text-modal">
-                    <label>Sending Physician</label>
-                    <span className="glyph-physician"></span> {this.props.patient.sphysician}
-                  </div>
-                  <div className="col-xs-12 col-sm-6 card_row card_text-modal">
-                    <label>Receiving Physician</label>
-                    <span className="glyph-physician"></span> {this.props.patient.rphysician}
+                    <span className="glyph-facility"></span>afafasf
                   </div>
                 </div>
                 <div className="row container-bottom-section">
-                  <div className="col-xs-12 col-sm-6">
-                    <label>Notes</label>
-                    <div className="container-notes-block">
-                      <div className="notes_author-name">{this.props.patient.notes.authorlname}, {this.props.patient.notes.authorfname}</div>
-                      <div className="notes_time">{this.props.patient.notes.notedate}</div>
-                      <div className="notes_time">{this.props.patient.notes.notetime}</div>
-                      <div className="notes_message">{this.props.patient.notes.message}</div>
-                    </div>
-                  </div>
-                  <div className="col-xs-12 col-sm-6">
-                    <label>Case Owner</label>
-                    <div className="card_row">{this.props.patient.notes.authorlname}, {this.props.patient.notes.authorfname}</div>
-                    <label>Date Created</label>
-                    <div className="card_row">{this.props.patient.datecreated}</div>
-                    <label>Case Timer</label>
-                    <div className="card_row">{this.props.patient.casetimer}</div>
-                  </div>
+                  {/*<div className="col-xs-12 col-sm-6">*/}
+                    {/*<label>Notes</label>*/}
+                    {/*<div className="container-notes-block">*/}
+                      {/*<div className="notes_author-name">{this.props.patient.notes.authorlname}, {this.props.patient.notes.authorfname}</div>*/}
+                      {/*<div className="notes_time">{this.props.patient.notes.notedate}</div>*/}
+                      {/*<div className="notes_time">{this.props.patient.notes.notetime}</div>*/}
+                      {/*<div className="notes_message">{this.props.patient.notes.message}</div>*/}
+                    {/*</div>*/}
+                  {/*</div>*/}
+                  {/*<div className="col-xs-12 col-sm-6">*/}
+                    {/*<label>Case Owner</label>*/}
+                    {/*<div className="card_row">{this.props.patient.notes.authorlname}, {this.props.patient.notes.authorfname}</div>*/}
+                    {/*<label>Date Created</label>*/}
+                    {/*<div className="card_row">{this.props.patient.datecreated}</div>*/}
+                    {/*<label>Case Timer</label>*/}
+                    {/*<div className="card_row">{this.props.patient.casetimer}</div>*/}
+                  {/*</div>*/}
                 </div>
             </div>
         );

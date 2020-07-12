@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Cards from "./Cards";
+import Cards from "./Cards2";
 import TopNav from "./TopNav";
 
 import 'bootstrap/dist/css/bootstrap.css';

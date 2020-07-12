@@ -293,16 +293,31 @@ body {
   background-color: #ebebeb !important;
   overflow: hidden;
 }
+.dashed-border,
+.container-cards-wrapper__title,
+.container-worklist_header:after {
+  border-top: 2px dashed #bfbfbf;
+}
 .container-cards-wrapper {
   height: calc(100vh - 70px);
   overflow-y: auto;
   margin: 0;
-  padding: 20px 20px 20px 20px;
+  padding: 20px 0 20px 130px;
 }
 @media (max-width: 768px) {
   .container-cards-wrapper {
     margin-top: 52px;
   }
+}
+.container-cards-wrapper__title {
+  float: left;
+  margin-left: -120px;
+  padding: 18px 20px;
+  margin-top: 61px;
+}
+.container-cards-wrapper__divider {
+  width: 100vw;
+  border-bottom: 1px dashed #666;
 }
 .container-worklist-column {
   background-color: #c5c5c53b;
@@ -310,17 +325,31 @@ body {
   padding: 20px 15px;
   box-shadow: inset 0px 0px 10px 6px #0000000f;
 }
+.kanban-header-text,
 .container-worklist_header {
+  color: #666666;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.container-worklist_header {
+  text-align: center;
   font-family: 'Lato', Helvetica, Arial, Sans-serif !important;
-  font-size: 18px;
   margin-bottom: 10px;
 }
-.container-columns {
+.container-worklist_header:after {
+  content: '';
+  width: calc(100% + 46px);
+  display: inline-block;
+  margin-bottom: 11px;
+  margin-left: -32px;
+  margin-top: 20px;
+}
+.swimlane {
   display: grid;
   grid-template-columns: minmax(350px, 23%) minmax(350px, 23%) minmax(350px, 23%) minmax(350px, 23%);
   grid-auto-flow: column;
   grid-column-gap: 20px;
-  height: 100%;
+  height: auto;
 }
 .column0 {
   grid-column: 1;

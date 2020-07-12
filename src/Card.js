@@ -87,7 +87,7 @@ class Card extends Component {
                         <button className="btn btn_positive"
                                 onClick={this.toggleModal}>
                             <span className="glyph-edit"></span>
-                            Edit
+                            Save
                         </button>
                         <button className="btn btn_negative"
                                 onClick={this.toggleModal}>
@@ -104,8 +104,8 @@ class Card extends Component {
                             Action
                         </div>
                         <div className="card_age">
-                            <ISO patient={this.props.patient}/>
-                            <EMTALA patient={this.props.patient}/>
+                            {/*<ISO patient={this.props.patient}/>*/}
+                            {/*<EMTALA patient={this.props.patient}/>*/}
                         </div>
                         {/*<div className="container-alerticons">*/}
                             {/*<Stroke patient={this.props.patient}/>*/}
