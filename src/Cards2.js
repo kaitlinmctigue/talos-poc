@@ -4,6 +4,7 @@ import cardsList from './cardList';
 import Card from './Card';
 import SplitButton from "react-bootstrap/es/SplitButton";
 import MenuItem from "react-bootstrap/es/MenuItem";
+import AddCardBtn from "./AddCardBtn";
 
 const cardAll = cardsList.cards;
 const demand = cardAll.splice(0, 6);
@@ -238,182 +239,482 @@ class Cards extends Component {
                     </div>
                     <div className="container-cards">
                             <div className="container-cards-wrapper">
-                                <div className="container-cards-wrapper__title kanban-header-text">Power System</div>
-                                <div className="swimlane">
-                                    <div className="swimlane" />
-                                    <div className="container-worklist-column column0 hidden-md-up">
-                                        <div className="container-worklist_header">Demand</div>
-                                        <Droppable droppableId="demand1">
-                                            {(provided, snapshot) => (
-                                                <div>
-                                                    <div
-                                                        ref={provided.innerRef}
-                                                        style={getListStyle(snapshot.isDraggingOver)}
-                                                    >
-                                                        {/*DEMAND*/}
-                                                        {this.state.demand.map(patient => (
-                                                            <Draggable key={patient.id} draggableId={patient.id}>
-                                                                {(provided, snapshot) => (
-                                                                    <div>
-                                                                        <div ref={provided.innerRef}
-                                                                             style={getItemStyle(
-                                                                                 provided.draggableStyle,
-                                                                                 snapshot.isDragging
-                                                                             )}
-                                                                             {...provided.dragHandleProps}>
-                                                                            <Card patient={patient}/>
+                                <div className="swimlane-1">
+                                    <div className="container-cards-wrapper__title kanban-header-text">Power System</div>
+                                    <div className="swimlane">
+                                        <div className="swimlane" />
+                                        <div className="container-worklist-column column0 hidden-md-up">
+                                            <div className="container-worklist_header">Demand</div>
+                                            <Droppable droppableId="demand1">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*DEMAND*/}
+                                                            {this.state.demand.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+                                                                                <Card patient={patient}/>
+                                                                            </div>
+                                                                            {provided.placeholder}
                                                                         </div>
-                                                                        {provided.placeholder}
-                                                                    </div>
-                                                                )}
-                                                            </Draggable>
-                                                        ))}
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
-                                        </Droppable>
+                                                )}
+                                            </Droppable>
+                                        </div>
+                                        <div className="container-worklist-column column1">
+                                            <div className="container-worklist_header">Known</div>
+                                            {/*<div className="container-worklist_header__divider" />*/}
+                                            <Droppable droppableId="addressing">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*ADDRESSING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.addressing.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+                                        </div>
+                                        <div className="container-worklist-column column2">
+                                            <div className="container-worklist_header">Unknown</div>
+                                            <Droppable droppableId="consulting">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*CONSULTING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.consulting.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+                                        </div>
+                                        <div className="container-worklist-column column3">
+                                            <div className="container-worklist_header">Potential Actions</div>
+                                            <Droppable droppableId="transferring">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*TRANSFERRING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.transferring.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+
+                                        </div>
+                                        <div className="container-worklist-column column4">
+                                            <div className="container-worklist_header">Completed Actions</div>
+                                            <Droppable droppableId="complete">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*COMPLETE*/}
+                                                            <AddCardBtn />
+                                                            {this.state.complete.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+                                        </div>
                                     </div>
-                                    <div className="container-worklist-column column1">
-                                        <div className="container-worklist_header">Known</div>
-                                        {/*<div className="container-worklist_header__divider" />*/}
-                                        <Droppable droppableId="addressing">
-                                            {(provided, snapshot) => (
-                                                <div>
-                                                    <div
-                                                        ref={provided.innerRef}
-                                                        style={getListStyle(snapshot.isDraggingOver)}
-                                                    >
-                                                        {/*ADDRESSING*/}
-                                                        {this.state.addressing.map(patient => (
-                                                            <Draggable key={patient.id} draggableId={patient.id}>
-                                                                {(provided, snapshot) => (
-                                                                    <div>
-                                                                        <div ref={provided.innerRef}
-                                                                             style={getItemStyle(
-                                                                                 provided.draggableStyle,
-                                                                                 snapshot.isDragging
-                                                                             )}
-                                                                             {...provided.dragHandleProps}>
+                                </div>
+                                <div className="swimlane-2">
+                                    <div className="container-cards-wrapper__title kanban-header-text">Warp System</div>
+                                    <div className="swimlane">
+                                        <div className="container-worklist-column column1">
+                                            <div className="container-worklist_header">Known</div>
+                                            {/*<div className="container-worklist_header__divider" />*/}
+                                            <Droppable droppableId="addressing">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*ADDRESSING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.addressing.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
 
-                                                                            <Card patient={patient}/>
+                                                                                <Card patient={patient}/>
 
+                                                                            </div>
+                                                                            {provided.placeholder}
                                                                         </div>
-                                                                        {provided.placeholder}
-                                                                    </div>
-                                                                )}
-                                                            </Draggable>
-                                                        ))}
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
-                                        </Droppable>
+                                                )}
+                                            </Droppable>
+                                        </div>
+                                        <div className="container-worklist-column column2">
+                                            <div className="container-worklist_header">Unknown</div>
+                                            <Droppable droppableId="consulting">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*CONSULTING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.consulting.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+                                        </div>
+                                        <div className="container-worklist-column column3">
+                                            <div className="container-worklist_header">Potential Actions</div>
+                                            <Droppable droppableId="transferring">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*TRANSFERRING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.transferring.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+
+                                        </div>
+                                        <div className="container-worklist-column column4">
+                                            <div className="container-worklist_header">Completed Actions</div>
+                                            <Droppable droppableId="complete">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*COMPLETE*/}
+                                                            <AddCardBtn />
+                                                            {this.state.complete.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+                                        </div>
                                     </div>
-                                    <div className="container-worklist-column column2">
-                                        <div className="container-worklist_header">Unknown</div>
-                                        <Droppable droppableId="consulting">
-                                            {(provided, snapshot) => (
-                                                <div>
-                                                    <div
-                                                        ref={provided.innerRef}
-                                                        style={getListStyle(snapshot.isDraggingOver)}
-                                                    >
-                                                        {/*CONSULTING*/}
-                                                        {this.state.consulting.map(patient => (
-                                                            <Draggable key={patient.id} draggableId={patient.id}>
-                                                                {(provided, snapshot) => (
-                                                                    <div>
-                                                                        <div ref={provided.innerRef}
-                                                                             style={getItemStyle(
-                                                                                 provided.draggableStyle,
-                                                                                 snapshot.isDragging
-                                                                             )}
-                                                                             {...provided.dragHandleProps}>
+                                </div>
+                                <div className="swimlane-2">
+                                    <div className="container-cards-wrapper__title kanban-header-text">Antimatter System</div>
+                                    <div className="swimlane">
+                                        <div className="container-worklist-column column1">
+                                            <div className="container-worklist_header">Known</div>
+                                            {/*<div className="container-worklist_header__divider" />*/}
+                                            <Droppable droppableId="addressing">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*ADDRESSING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.addressing.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
 
-                                                                            <Card patient={patient}/>
+                                                                                <Card patient={patient}/>
 
+                                                                            </div>
+                                                                            {provided.placeholder}
                                                                         </div>
-                                                                        {provided.placeholder}
-                                                                    </div>
-                                                                )}
-                                                            </Draggable>
-                                                        ))}
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
-                                        </Droppable>
-                                    </div>
-                                    <div className="container-worklist-column column3">
-                                        <div className="container-worklist_header">Potential Actions</div>
-                                        <Droppable droppableId="transferring">
-                                            {(provided, snapshot) => (
-                                                <div>
-                                                    <div
-                                                        ref={provided.innerRef}
-                                                        style={getListStyle(snapshot.isDraggingOver)}
-                                                    >
-                                                        {/*TRANSFERRING*/}
-                                                        {this.state.transferring.map(patient => (
-                                                            <Draggable key={patient.id} draggableId={patient.id}>
-                                                                {(provided, snapshot) => (
-                                                                    <div>
-                                                                        <div ref={provided.innerRef}
-                                                                             style={getItemStyle(
-                                                                                 provided.draggableStyle,
-                                                                                 snapshot.isDragging
-                                                                             )}
-                                                                             {...provided.dragHandleProps}>
+                                                )}
+                                            </Droppable>
+                                        </div>
+                                        <div className="container-worklist-column column2">
+                                            <div className="container-worklist_header">Unknown</div>
+                                            <Droppable droppableId="consulting">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*CONSULTING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.consulting.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
 
-                                                                            <Card patient={patient}/>
+                                                                                <Card patient={patient}/>
 
+                                                                            </div>
+                                                                            {provided.placeholder}
                                                                         </div>
-                                                                        {provided.placeholder}
-                                                                    </div>
-                                                                )}
-                                                            </Draggable>
-                                                        ))}
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
-                                        </Droppable>
+                                                )}
+                                            </Droppable>
+                                        </div>
+                                        <div className="container-worklist-column column3">
+                                            <div className="container-worklist_header">Potential Actions</div>
+                                            <Droppable droppableId="transferring">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*TRANSFERRING*/}
+                                                            <AddCardBtn />
+                                                            {this.state.transferring.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
 
-                                    </div>
-                                    <div className="container-worklist-column column4">
-                                        <div className="container-worklist_header">Completed Actions</div>
-                                        <Droppable droppableId="complete">
-                                            {(provided, snapshot) => (
-                                                <div>
-                                                    <div
-                                                        ref={provided.innerRef}
-                                                        style={getListStyle(snapshot.isDraggingOver)}
-                                                    >
-                                                        {/*COMPLETE*/}
-                                                        {this.state.complete.map(patient => (
-                                                            <Draggable key={patient.id} draggableId={patient.id}>
-                                                                {(provided, snapshot) => (
-                                                                    <div>
-                                                                        <div ref={provided.innerRef}
-                                                                             style={getItemStyle(
-                                                                                 provided.draggableStyle,
-                                                                                 snapshot.isDragging
-                                                                             )}
-                                                                             {...provided.dragHandleProps}>
+                                                                                <Card patient={patient}/>
 
-                                                                            <Card patient={patient}/>
-
+                                                                            </div>
+                                                                            {provided.placeholder}
                                                                         </div>
-                                                                        {provided.placeholder}
-                                                                    </div>
-                                                                )}
-                                                            </Draggable>
-                                                        ))}
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
-                                        </Droppable>
+                                                )}
+                                            </Droppable>
+
+                                        </div>
+                                        <div className="container-worklist-column column4">
+                                            <div className="container-worklist_header">Completed Actions</div>
+                                            <Droppable droppableId="complete">
+                                                {(provided, snapshot) => (
+                                                    <div>
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            style={getListStyle(snapshot.isDraggingOver)}
+                                                        >
+                                                            {/*COMPLETE*/}
+                                                            <AddCardBtn />
+                                                            {this.state.complete.map(patient => (
+                                                                <Draggable key={patient.id} draggableId={patient.id}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div>
+                                                                            <div ref={provided.innerRef}
+                                                                                 style={getItemStyle(
+                                                                                     provided.draggableStyle,
+                                                                                     snapshot.isDragging
+                                                                                 )}
+                                                                                 {...provided.dragHandleProps}>
+
+                                                                                <Card patient={patient}/>
+
+                                                                            </div>
+                                                                            {provided.placeholder}
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Droppable>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                    </div>
                 </div>
             </DragDropContext>
         );

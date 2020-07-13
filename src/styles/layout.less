@@ -32,8 +32,9 @@ body {
   &__title {
     float: left;
     margin-left: -120px;
-    padding: 18px 20px;
+    padding: 18px 10px;
     margin-top: 61px;
+    width: 110px;
     &:extend(.dashed-border);
   }
 
@@ -46,8 +47,8 @@ body {
 .container-worklist-column {
   background-color: @color-worklist-column-background;
   border-radius: @corner-rounded;
-  padding: 20px 15px;
-  box-shadow: inset 0px 0px 10px 6px #0000000f;
+  padding: 20px 15px 0;
+  //box-shadow: inset 0px 0px 10px 6px #0000000f;
 }
 
 .kanban-header-text {
@@ -81,6 +82,14 @@ body {
   grid-auto-flow: column;
   grid-column-gap: 20px;
   height: auto;
+}
+
+.swimlane-2 {
+  margin-top: -10px;
+
+  .container-worklist_header {
+    color: transparent!important;
+  }
 }
 
 .column0 {

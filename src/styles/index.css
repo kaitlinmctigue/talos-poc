@@ -312,18 +312,18 @@ body {
 .container-cards-wrapper__title {
   float: left;
   margin-left: -120px;
-  padding: 18px 20px;
+  padding: 18px 10px;
   margin-top: 61px;
+  width: 110px;
 }
 .container-cards-wrapper__divider {
   width: 100vw;
   border-bottom: 1px dashed #666;
 }
 .container-worklist-column {
-  background-color: #c5c5c53b;
+  background-color: #e3e3e3;
   border-radius: 5px;
-  padding: 20px 15px;
-  box-shadow: inset 0px 0px 10px 6px #0000000f;
+  padding: 20px 15px 0;
 }
 .kanban-header-text,
 .container-worklist_header {
@@ -350,6 +350,12 @@ body {
   grid-auto-flow: column;
   grid-column-gap: 20px;
   height: auto;
+}
+.swimlane-2 {
+  margin-top: -10px;
+}
+.swimlane-2 .container-worklist_header {
+  color: transparent!important;
 }
 .column0 {
   grid-column: 1;
@@ -518,6 +524,10 @@ body {
 }
 .hidden {
   display: none!important;
+}
+.file-name {
+  font-size: 22px;
+  font-weight: 600;
 }
 .nav--desktop {
   position: fixed;
@@ -911,6 +921,23 @@ h2 {
 }
 .border-thin_light {
   border-top: 1px solid #ebebeb;
+}
+.add-card-btn {
+  background: rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  width: 100%;
+  display: inline-block;
+  padding: 13px 0 16px 0;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: bolder;
+  color: rgba(0, 0, 0, 0.2);
+  line-height: 0;
+  font-size: 36px;
+  border: none;
+}
+.add-card-btn:hover {
+  background: rgba(0, 0, 0, 0.15);
 }
 .card-patient {
   border-radius: 4px;

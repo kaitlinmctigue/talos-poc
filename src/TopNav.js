@@ -78,31 +78,7 @@ class TopNav extends Component {
 
                                 {/*body*/}
                                 <div className="row nav_sidebar_body">
-                                    <div className="col-xs-12">
-                                        <Accordion>
-                                            <Panel className="active" header="Access" eventKey="1">
-                                                <ul className="nav_sidebar_child-nav">
-                                                    <li>Transfers</li>
-                                                </ul>
-                                            </Panel>
-                                            <Panel header="On Call" eventKey="2">
-                                                <ul className="nav_sidebar_child-nav">
-                                                    <li>Schedules</li>
-                                                    <li>Clinicians</li>
-                                                    <li>Gap</li>
-                                                    <li>Currently On Call</li>
-                                                </ul>
-                                            </Panel>
-                                            <Panel header="Admin" eventKey="3">
-                                                <ul className="nav_sidebar_child-nav">
-                                                    <li>Data</li>
-                                                    <li>Settings</li>
-                                                    <li>Structure</li>
-                                                    <li>Users</li>
-                                                </ul>
-                                            </Panel>
-                                        </Accordion>
-                                    </div>
+
                                 </div>
                             </Drawer>
                         </div>
@@ -114,21 +90,7 @@ class TopNav extends Component {
                         <Navbar.Header>
                             <h1><span className="navbar-brand" title="TALOS"></span></h1>
                         </Navbar.Header>
-                        {/*<Nav>*/}
-                            {/*<NavItem eventKey={1} href="#" className="active">Access</NavItem>*/}
-                            {/*<NavItem eventKey={2} href="#">On Call</NavItem>*/}
-                            {/*<NavItem eventKey={3} href="#">Admin</NavItem>*/}
-                        {/*</Nav>*/}
-                        {/*<Nav className="pull-right">*/}
-                            {/*<NavDropdown eventKey={4} title="Josephine Doe" id="basic-nav-dropdown">*/}
-                                {/*<MenuItem eventKey={4.1}>My Settings</MenuItem>*/}
-                                {/*<MenuItem eventKey={4.2}>Help</MenuItem>*/}
-                                {/*<MenuItem eventKey={4.3}>Legal Information</MenuItem>*/}
-                                {/*<MenuItem eventKey={4.4}>About TeleTracking</MenuItem>*/}
-                                {/*<MenuItem divider />*/}
-                                {/*<MenuItem eventKey={4.5}>Sign Out</MenuItem>*/}
-                            {/*</NavDropdown>*/}
-                        {/*</Nav>*/}
+                        <Nav className={"file-name"}>Warp Malfunction</Nav>
                         <button className="btn btn_positive pull-right">Send</button>
                     </Navbar>
 

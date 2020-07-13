@@ -52,16 +52,16 @@ class App extends Component {
                 <TopNav/>
 
                 {/*/!*mode switch*!/*/}
-                {/*<div className="nav_toggle-view-bar">*/}
-                    {/*<ToggleButtonGroup type="radio" name="options" defaultValue={false}>*/}
-                        {/*<ToggleButton value={false} onClick={this.toCards}>*/}
-                            {/*<span className="glyph-cards"></span>*/}
-                        {/*</ToggleButton>*/}
-                        {/*<ToggleButton value={true} onClick={this.toList}>*/}
-                            {/*<span className="glyph-table"></span>*/}
-                        {/*</ToggleButton>*/}
-                    {/*</ToggleButtonGroup>*/}
-                {/*</div>*/}
+                <div className="nav_toggle-view-bar">
+                    <ToggleButtonGroup type="radio" name="options" defaultValue={false}>
+                        <ToggleButton value={false} onClick={this.toCards}>
+                            <span className="glyph-cards"></span>
+                        </ToggleButton>
+                        <ToggleButton value={true} onClick={this.toList}>
+                            <span className="glyph-table"></span>
+                        </ToggleButton>
+                    </ToggleButtonGroup>
+                </div>
 
                 {/*route rest of page*/}
                 <Routing mode={this.state.listMode}/>
