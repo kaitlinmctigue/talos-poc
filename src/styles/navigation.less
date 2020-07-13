@@ -40,24 +40,29 @@
   z-index: @zindex-level3;
   position: absolute;
   top: 0;
-  left: 48%;
+  left: calc(50% - 120px);
 
   @media (max-width: @breakpoint_sm-max) {
     top: 118px;
   }
 
   .btn-group {
-    padding: 6px 10px!important;
+    padding: 10px!important;
   }
 
-  label.btn {
-    width: 50%!important;
-    display: inline-block;
-    color: @color-mid-gray;
-    background-color: @color-white;
-    background: @color-white;
-    background-image: @color-white;
-    padding: 6px 10px!important;
+  .btn {
+    padding: 4px;
+
+    img {
+      height: 25px;
+      opacity: .6;
+    }
+
+    &.active {
+      img {
+        opacity: 1;
+      }
+    }
   }
 
   label.btn.active {

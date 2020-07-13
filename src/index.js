@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import kanbanIcon from './images/list.svg';
+import boardIcon from './images/board.svg';
+import splitIcon from './images/split.svg';
+
 import Cards from "./Cards2";
 import TopNav from "./TopNav";
 
@@ -10,14 +14,16 @@ import 'font-awesome/css/font-awesome.min.css';
 import './styles/index.css';
 import ButtonToolbar from "react-bootstrap/es/ButtonToolbar";
 import ToggleButtonGroup from "react-bootstrap/es/ToggleButtonGroup";
-import ToggleButton from "react-bootstrap/es/ToggleButton";
-import Listview from "./Listview";
+import ButtonGroup from "react-bootstrap/es/ButtonGroup";
+import Button from "react-bootstrap/es/Button";
+import Board from "./Board";
 // import 'https://use.fontawesome.com/fb0cdb711b.js';
 
 function Routing(props) {
-    if (props.mode) {
-        return <Listview/>
-    } else {
+    console.log(props);
+    if (props.mode == 'board') {
+        return <Board/>
+    } else if (props.mode == 'split'){
         return <Cards/>;
     }
 }
@@ -27,7 +33,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listMode: false
+            page: 'split'
         };
         this.toList = this.toList.bind(this);
         this.toCards = this.toCards.bind(this);
@@ -35,13 +41,13 @@ class App extends Component {
 
     toList() {
         this.setState({
-            listMode: true
+            page: 'board'
         });
     }
 
     toCards() {
         this.setState({
-            listMode: false
+            page: 'split'
         });
     }
 
@@ -53,18 +59,30 @@ class App extends Component {
 
                 {/*/!*mode switch*!/*/}
                 <div className="nav_toggle-view-bar">
-                    <ToggleButtonGroup type="radio" name="options" defaultValue={false}>
-                        <ToggleButton value={false} onClick={this.toCards}>
-                            <span className="glyph-cards"></span>
-                        </ToggleButton>
-                        <ToggleButton value={true} onClick={this.toList}>
-                            <span className="glyph-table"></span>
-                        </ToggleButton>
-                    </ToggleButtonGroup>
+                    {/*<ToggleButtonGroup type="radio" name="options" defaultValue={false}>*/}
+                        {/*<ToggleButton value={false} onClick={this.toCards}>*/}
+                            {/*<span className="glyph-cards"></span>*/}
+                        {/*</ToggleButton>*/}
+                        {/*<ToggleButton value={true} onClick={this.toList}>*/}
+                            {/*<span className="glyph glyph-clipboard"></span>*/}
+                        {/*</ToggleButton>*/}
+                    {/*</ToggleButtonGroup>*/}
+
+                    <ButtonGroup aria-label="Basic example" className={'nav_toggle-view-bar'}>
+                        <Button onClick={this.toList} active={(this.state.page == 'board')} variant="secondary">
+                            <img src={boardIcon} />
+                        </Button>
+                        <Button onClick={this.toCards} active={(this.state.page == 'split')} variant="secondary">
+                            <img src={splitIcon} />
+                        </Button>
+                        <Button active={(this.state.page == 'cards')} variant="secondary">
+                            <img src={kanbanIcon} />
+                        </Button>
+                    </ButtonGroup>
                 </div>
 
                 {/*route rest of page*/}
-                <Routing mode={this.state.listMode}/>
+                <Routing mode={this.state.page}/>
                 {/*<Cards className={this.state.listMode ? 'hidden ' : ''}/>*/}
                 {/*<Listview className={this.state.listMode ? '' : 'hidden '}/>*/}
             </div>
